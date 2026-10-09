@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jily Das — Computer Science and Engineering student, interested in simplifying problems through code.">
+  <title>Jily Das | CSE Student</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: rgba(20, 28, 50, 0.82);
+      --text: #f4f7ff;
+      --muted: #aab5ce;
+      --accent: #8b9cff;
+      --accent2: #70e1d1;
+      --line: rgba(255,255,255,.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 15% 5%, rgba(93, 112, 255, .20), transparent 38%),
+        radial-gradient(ellipse at 85% 35%, rgba(65, 218, 197, .12), transparent 35%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1050px, calc(100% - 36px)); margin: auto; }
+    header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    .brand { font-weight: 800; letter-spacing: .04em; text-decoration: none; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .nav-links a { color: var(--muted); font-size: .94rem; text-decoration: none; }
+    .nav-links a:hover { color: var(--text); }
+    .hero { padding: 94px 0 76px; display: grid; grid-template-columns: 1.4fr .8fr; gap: 44px; align-items: center; }
+    .eyebrow { color: var(--accent2); text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; font-weight: 800; }
+    h1 { font-size: clamp(2.6rem, 7vw, 5.2rem); line-height: 1.03; letter-spacing: -.055em; margin: 16px 0 20px; }
+    h1 span { color: var(--accent); }
+    .lead { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.25rem); max-width: 620px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-block; padding: 11px 17px; border-radius: 12px; font-weight: 700; text-decoration: none; border: 1px solid var(--line); }
+    .btn.primary { background: linear-gradient(120deg, var(--accent), #a9b3ff); color: #11162b; border: 0; }
+    .btn:hover { transform: translateY(-2px); transition: .2s ease; }
+    .profile-card { border: 1px solid var(--line); border-radius: 24px; padding: 28px; background: var(--panel); box-shadow: 0 25px 80px rgba(0,0,0,.25); }
+    .avatar { width: 90px; height: 90px; border-radius: 25px; display: grid; place-items: center; font-size: 2rem; font-weight: 900; color: #10162b; background: linear-gradient(135deg, var(--accent), var(--accent2)); margin-bottom: 20px; }
+    .profile-card h2 { margin: 0 0 4px; font-size: 1.35rem; }
+    .profile-card p { color: var(--muted); margin: 0; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .tag { border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; font-size: .82rem; color: #dce3f7; }
+    section { padding: 30px 0 54px; }
+    .section-title { font-size: 1.8rem; letter-spacing: -.03em; margin: 0 0 8px; }
+    .section-intro { color: var(--muted); margin: 0 0 25px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+    .card h3 { margin: 0 0 7px; font-size: 1.08rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .date { color: var(--accent2); font-size: .88rem; font-weight: 700; margin-bottom: 8px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill { padding: 10px 15px; background: rgba(139,156,255,.10); border: 1px solid rgba(139,156,255,.28); border-radius: 12px; }
+    .contact-card { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+    .contact-card p { color: var(--muted); margin: 5px 0 0; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 32px; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; padding: 62px 0 45px; gap: 28px; }
+      .grid { grid-template-columns: 1fr; }
+      nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#home">JILY DAS<span style="color:var(--accent)">.</span></a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" id="home">
+        <div>
+          <div class="eyebrow">Computer Science &amp; Engineering</div>
+          <h1>Hi, I'm <span>Jily Das.</span></h1>
+          <p class="lead">A CSE student who enjoys simplifying problems through code and learning how technology can turn ideas into practical solutions.</p>
+          <div class="actions">
+            <a class="btn primary" href="#contact">Get in touch</a>
+            <a class="btn" href="https://www.linkedin.com/in/jily-das-993b75357" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+        <aside class="profile-card" aria-label="Profile summary">
+          <div class="avatar" aria-hidden="true">JD</div>
+          <h2>Jily Das</h2>
+          <p> B.Tech student · Computer Science &amp; Engineering</p>
+          <div class="tag-row">
+            <span class="tag">Problem solving</span>
+            <span class="tag">Learning by building</span>
+            <span class="tag">Technology</span>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-intro">A little about my journey and interests.</p>
+        <div class="card">
+          <p>I'm currently pursuing a Bachelor of Technology in Computer Science and Engineering at Assam Science and Technology University (ASTU), Guwahati, Assam, India. I'm building my foundation in programming and exploring ways to use code to solve real-world problems.</p>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2 class="section-title">Education</h2>
+        <p class="section-intro">My academic background.</p>
+        <div class="grid">
+          <article class="card">
+            <div class="date">2025 – 2029</div>
+            <h3>Bachelor of Technology (B.Tech)</h3>
+            <p>Computer Science &amp; Engineering<br>Assam Science and Technology University (ASTU)</p>
+          </article>
+          <article class="card">
+            <div class="date">Previous study</div>
+            <h3>Cotton University</h3>
+            <p>B.Sc. in Computer Science (discontinued)</p>
+          </article>
+          <article class="card">
+            <div class="date">School education</div>
+            <h3>Cotton University</h3>
+            <p>Higher Secondary (HS)</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-intro">Programming languages listed in my profile.</p>
+        <div class="skills">
+          <span class="skill">C</span>
+          <span class="skill">C++</span>
+          <span class="skill">Python</span>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="card contact-card">
+          <div>
+            <h2 class="section-title">Let's Connect</h2>
+            <p>Feel free to reach out about technology, learning, or collaboration.</p>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="mailto:dasjily198@gmail.com">Email Me</a>
+            <a class="btn" href="https://www.linkedin.com/in/jily-das-993b75357" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> Jily Das. Built with HTML &amp; CSS.</div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
